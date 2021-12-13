@@ -2,7 +2,7 @@ import $ from 'jquery';
 import wtcharts from 'webtrader-charts';
 
 wtcharts.init({
-   appId: 11,
+   appId: 30677,
    lang: 'en', // default is 'en'
    server: 'wss://ws.binaryws.com/websockets/v3'
 });
@@ -10,13 +10,21 @@ wtcharts.init({
 const $parent = $('#container');
 
 const chart =  wtcharts.chartWindow.addNewChart($parent, {
-   "instrumentCode": "R_300",
-   "instrumentName": "R_300 Index",
+   "instrumentCode": "R_10",
+   "instrumentName": "R_10 Index",
    "showInstrumentName": true,
    "timePeriod": "1t",
    "type": "line",
    "indicators": [],
-   "overlays": []
+   enableMobileView: true, // default is false
+
+     /* optional field timezoneOffset in minutes, see (http://api.highcharts.com/highstock/global.timezoneOffset)
+
+        timezone is global in highcharts, this option will effect other charts on the page */
+
+    "timezoneOffset": 0,
+
+      }
 });
 const chart2 =  wtcharts.chartWindow.addNewChart($('#container2'), {
   "instrumentCode": "R_50",
@@ -60,9 +68,17 @@ const run_timing_issue_test = () => {
          "instrumentCode": "GDAXI",
          "instrumentName": "German Index",
          "timePeriod": "1d",
-         "type": "candlestick",
+         "type": "line",
          "indicators": [],
-         "overlays": []
+         "overlays": [ ],
+
+          enableMobileView: true, // default is false
+
+     /* optional field timezoneOffset in minutes, see (http://api.highcharts.com/highstock/global.timezoneOffset)
+
+        timezone is global in highcharts, this option will effect other charts on the page */
+
+    "timezoneOffset": 0,
       }
    ];
 

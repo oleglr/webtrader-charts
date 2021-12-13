@@ -10,8 +10,8 @@ wtcharts.init({
 const $parent = $('#container');
 
 const chart =  wtcharts.chartWindow.addNewChart($parent, {
-   "instrumentCode": "OTC_NDX",
-   "instrumentName": "US Tech Index",
+   "instrumentCode": "R_300",
+   "instrumentName": "R_300 Index",
    "showInstrumentName": true,
    "timePeriod": "1t",
    "type": "line",
